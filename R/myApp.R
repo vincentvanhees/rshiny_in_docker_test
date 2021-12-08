@@ -16,7 +16,7 @@ myApp <- function(homedir=getwd(), ...) {
   )
   server <- function(input, output, session) {
     observeEvent(input$save, {
-      file = paste0(homedir, "/dummy_file_you_can_delete_me.txt")
+      file = paste0(homedir, "./dummy_file_you_can_delete_me.txt")
       
       output$message <- renderText({paste0("Trying to save ", file)})
       write("abc", file = file, append=TRUE)

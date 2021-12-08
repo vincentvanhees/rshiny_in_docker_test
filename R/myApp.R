@@ -19,7 +19,7 @@ myApp <- function(homedir=getwd(), ...) {
       file = paste0(homedir, "/dummy_file_you_can_delete_me.txt")
       
       output$message <- renderText({paste0("Trying to save ", file)})
-      write("abc", file = file,append=TRUE)
+      write("abc", file = file, append=TRUE)
       if (file.exists(file)) {
         output$message <- renderText({paste0("Object has successfully been stored to ", file)})
       } else {

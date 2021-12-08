@@ -2,7 +2,7 @@
 FROM rocker/shiny
 
 # install R packages required
-RUN R -e 'install.packages(c("shiny", "remotes"), \
+RUN R -e 'install.packages("remotes", \
             repos="https://packagemanager.rstudio.com/cran/__linux__/focal/latest"\
           )'
 RUN R -e 'remotes::install_github("vincentvanhees/rshiny_in_docker_test")'

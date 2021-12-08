@@ -1,8 +1,8 @@
 Package: HabitusGUI
-Title: R Shiny App For Processing Behavioural Data
-Description: Shiny app to ease processing behavioural data with research software such as GGIR, activityCounts, PALMSpy,and PALMSplus.
-Version: 0.1.2
-Date: 2021-11-29
+Title: R Shiny App For Testing Docker Integration
+Description: Shiny app with just one button to save a tiny text file to mounted volume.
+Version: 0.0.1
+Date: 2021-12-8
 Authors@R: 
     person(given = "Vincent",
            family = "van Hees",

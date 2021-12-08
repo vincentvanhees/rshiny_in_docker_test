@@ -7,11 +7,11 @@ RUN R -e 'install.packages("remotes", \
           )'
 RUN R -e 'remotes::install_github("vincentvanhees/rshiny_in_docker_test")'
 
+# Copy code to run the app to the container
 RUN mkdir -p /code
-
 COPY /code/app.R /srv/shiny-server/
 
-# Change working directory to equal the location where will mounted the volume
+# Change working directory to equal the location of the mounted volume
 WORKDIR /srv/shiny-server/data
 
 # run app

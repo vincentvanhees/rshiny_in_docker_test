@@ -11,6 +11,8 @@ RUN mkdir -p /code
 
 COPY /code/app.R /srv/shiny-server/
 
-# run app
+# Change working directory to equal the location where will mounted the volume
 WORKDIR /srv/shiny-server/data
+
+# run app
 CMD ["/usr/bin/shiny-server"]

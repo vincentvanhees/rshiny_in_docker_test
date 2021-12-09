@@ -11,5 +11,8 @@ This repository aims to test the creation of a Docker container that has a Shiny
 3. cd to the Docker folder of this repo.
 4. Build: `docker build -t habitus-app .` If you already have a rocker/shiny image then this should take less than a minute.
 5. Run: `docker run --rm -v ~:/srv/shiny-server/data -p 3838:3838 -u shiny habitus-app` . Where you may want to replace `~` by the path of the local directory you want to mount.
-6. Open app in browser: http://localhost:3838/
-7. Click the button.
+
+**EDIT: PROBLEM FIXED, IF YOU DO: `docker run --rm -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny habitus-app` IT SHOULD JUST WORK**
+
+7. Open app in browser: http://localhost:3838/
+8. Click the button.

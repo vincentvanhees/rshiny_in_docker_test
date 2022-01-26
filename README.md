@@ -4,19 +4,26 @@ Repository to test using Rshiny in Docker with mounted volume
 This repository aims to test the creation of a Docker container that has a Shiny app inside it that is able to write to a mounted volume. The app consists of only one button which, once clicked, tells the app to save a tiny text file to the mounted volume. 
 
 
-### To reproduce the issue:
+### Installation
 
 1. Install Docker
 2. Clone this repository.
 3. cd to the Docker folder of this repo.
-4. Build: `docker build -t test-app .` If you already have a rocker/shiny image then this should take less than a minute.
-5. Run: `docker run --rm -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny test-app` . Where you may want to replace `~` by the path of the local directory you want to mount.
+4. `docker build -t test-app .` If you already have a rocker/shiny image then this should take less than a minute.
+
+### Run
+
+5. `docker run --rm -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny test-app`
+6. Open app in browser: http://localhost:3838/
+
+### Run in detached mode to check log file
+
+7. `docker run --rm -d -v ~/:/srv/shiny-server/data/ -p 3838:3838 --name my-test-run test-app`
+8. `docker exec -it my-test-run bash`
+9. Open app in browser: http://localhost:3838/
+10. `cat /var/log/shiny-server/shiny-server-shiny-*.log`
+11. When done, to remove all containers: `docker container kill $(docker container ls -q)`
 
 
-
-7. Open app in browser: http://localhost:3838/
-8. Click the button.
-
-
-Older problem that was fixed:
-When run outside a Docker container the app works fine and the file is created in the working directory, but when run inside the Docker container the app currently crashes once the button is clicked. Solution, I forgot the forward slash at the end of the paths.
+### Solutions to older problems:
+- When run outside a Docker container the app works fine and the file is created in the working directory, but when run inside the Docker container the app currently crashes once the button is clicked. Solution, I forgot the forward slash at the end of the paths.

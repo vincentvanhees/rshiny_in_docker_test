@@ -13,12 +13,12 @@ This repository aims to test the creation of a Docker container that has a Shiny
 
 ### Run
 
-5. `docker run --rm -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny test-app`
+# 5. `docker run --rm -it -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny test-app`
 6. Open app in browser: http://localhost:3838/
 
 ### Run in detached mode to check log file
 
-7. `docker run --rm -d -v ~/:/srv/shiny-server/data/ -p 3838:3838 --name my-test-run test-app`
+7. `docker run --rm -d -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny --name my-test-run test-app`
 8. `docker exec -it my-test-run bash`
 9. Open app in browser: http://localhost:3838/
 10. `cd /var/log/shiny-server` # Is shiny-server-shiny-*.log there? If yes, look inside/

@@ -1,8 +1,8 @@
-library("HabitusGUI")
+library("TestRShinyApp")
 if ("data" %in% dir()) {
-  homedir = paste0(getwd(),"/data") # cd to data directory
+  homedir = paste0(getwd(), "/data") # cd to data directory
   setwd(homedir)
 } else {
   homedir = getwd()
 }
-HabitusGUI::myApp(homedir)
+TestRShinyApp::myApp(homedir)

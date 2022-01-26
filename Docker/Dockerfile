@@ -1,6 +1,8 @@
 # get shiny server and R from the rocker project
 FROM rocker/shiny
 
+SHELL ["/bin/bash",  "--login", "-c"]
+
 # install R packages required
 RUN R -e 'install.packages("remotes", \
             repos="https://packagemanager.rstudio.com/cran/__linux__/focal/latest"\

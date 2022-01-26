@@ -21,7 +21,7 @@ This repository aims to test the creation of a Docker container that has a Shiny
 7. `docker run --rm -d -v ~/:/srv/shiny-server/data/ -p 3838:3838 --name my-test-run test-app`
 8. `docker exec -it my-test-run bash`
 9. Open app in browser: http://localhost:3838/
-10. `cat /var/log/shiny-server/shiny-server-shiny-*.log`
+10. `cd /var/log/shiny-server` # Is shiny-server-shiny-*.log there? If yes, look inside/
 11. When done, to remove all containers: `docker container kill $(docker container ls -q)`
 
 

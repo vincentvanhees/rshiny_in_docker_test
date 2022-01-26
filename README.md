@@ -24,6 +24,3 @@ This repository aims to test the creation of a Docker container that has a Shiny
 10. `cd /var/log/shiny-server` # Is shiny-server-shiny-*.log there? If yes, look inside/
 11. When done, to remove all containers: `docker container kill $(docker container ls -q)`
 
-
-### Solutions to older problems:
-- When run outside a Docker container the app works fine and the file is created in the working directory, but when run inside the Docker container the app currently crashes once the button is clicked. Solution, I forgot the forward slash at the end of the paths.

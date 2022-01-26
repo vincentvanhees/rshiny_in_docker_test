@@ -3,8 +3,6 @@ FROM rocker/shiny
 
 SHELL ["/bin/bash",  "--login", "-c"]
 
-RUN apt-get update
-
 # install R packages required
 RUN R -e 'install.packages("remotes", \
             repos="https://packagemanager.rstudio.com/cran/__linux__/focal/latest"\

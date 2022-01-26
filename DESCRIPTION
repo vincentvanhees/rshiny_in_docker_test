@@ -1,4 +1,4 @@
-Package: HabitusGUI
+Package: TestRShinyApp
 Title: R Shiny App For Testing Docker Integration
 Description: Shiny app with just one button to save a tiny text file to mounted volume.
 Version: 0.0.1

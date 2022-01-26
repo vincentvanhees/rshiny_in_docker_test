@@ -6,7 +6,7 @@
 #' @import shiny
 #' @export
 
-# HabitusGUI::myApp(homedir="~/projects")
+# TestRShinyApp::myApp(homedir="~")
 # roxygen2::roxygenise()
 
 myApp <- function(homedir=getwd(), ...) {

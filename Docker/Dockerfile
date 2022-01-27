@@ -13,6 +13,9 @@ RUN R -e 'remotes::install_github("vincentvanhees/rshiny_in_docker_test")'
 RUN mkdir -p /code
 COPY /code/app.R /srv/shiny-server/
 
+# Make sure all file are readable
+RUN chmod -R 755 /srv/shiny-server/
+
 # Change working directory to equal the location of the mounted volume
 WORKDIR /srv/shiny-server/data
 

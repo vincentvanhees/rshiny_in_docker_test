@@ -1,7 +1,7 @@
 # rshiny_in_docker_test
 Repository to test using Rshiny in Docker with mounted volume
 
-This repository aims to test the creation of a Docker container that has a Shiny app inside it that is able to write to a mounted volume. The app consists of only one button which, once clicked, tells the app to save a tiny text file to the mounted volume. 
+This repository aims to test the creation of a Docker container that has a Shiny app inside it that is able to write to a mounted volume. The app consists of only one button which, once clicked, tells the app to save a tiny text file to the mounted volume.
 
 
 ### Installation
@@ -13,7 +13,7 @@ This repository aims to test the creation of a Docker container that has a Shiny
 
 ### Run
 
-# 5. `docker run --rm -it -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny test-app`
+5. `docker run --rm -it -v ~/:/srv/shiny-server/data/ -p 3838:3838 -u shiny test-app`
 6. Open app in browser: http://localhost:3838/
 
 ### Run in detached mode to check log file
@@ -23,7 +23,3 @@ This repository aims to test the creation of a Docker container that has a Shiny
 9. Open app in browser: http://localhost:3838/
 10. `cd /var/log/shiny-server` # Is shiny-server-shiny-*.log there? If yes, look inside/
 11. When done, to remove all containers: `docker container kill $(docker container ls -q)`
-
-
-### Solutions to older problems:
-- When run outside a Docker container the app works fine and the file is created in the working directory, but when run inside the Docker container the app currently crashes once the button is clicked. Solution, I forgot the forward slash at the end of the paths.

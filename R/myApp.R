@@ -15,7 +15,8 @@ myApp <- function(homedir=getwd(), ...) {
   server <- function(input, output, session) {
     observeEvent(input$save, {
       # First check access permissions of directory
-      cat("\n Check access ",homedir)
+      cat("\n Check access with R function file.access for ",homedir)
+      cat("\n Coding: succes -> 0, failure -> -1)")
       for (mode in c(0, 4, 2, 1)) {
         cat("\n mode ",mode, "result: ", file.access(homedir, mode = mode))
       }

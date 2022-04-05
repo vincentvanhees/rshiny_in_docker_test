@@ -3,8 +3,6 @@ Repository to test using Rshiny in Docker with mounted volume
 
 This repository aims to test the creation of a Docker container that has a Shiny app inside it that is able to write to a mounted volume. The app consists of only one button which, once clicked, tells the app to save a tiny text file to the mounted volume.
 
-Adding new line to fix bug...
-
 ### Installation
 
 1. Install Docker
